@@ -13,7 +13,7 @@ from logic.Mach_number.calculator import (
     compute_speed_from_temperature,
     compute_speed_of_sound_from_mach_number
 )
-from logic.speed_of_sound.calculator import (
+from logic.Speed_of_sound.calculator import (
     compute_speed_of_sound_from_temperature,
     compute_speed_of_sound_from_altitude,
     compute_temperature_from_speed_of_sound

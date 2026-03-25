@@ -121,18 +121,3 @@ def compute_speed_of_sound_from_mach_number(speed, mach_number):
     speed_of_sound = speed/mach_number
 
     return speed_of_sound
-
-def _check_inputs(speed_of_sound, speed):
-    """
-    Checks for valid inputs.
-
-    Parameters:
-        speed_of sound (float): Speed of sound (m/s or ft/s depending on units)
-        speed (float): Speed (m/s or ft/s depending on units)
-        
-        """
-    if speed_of_sound <= 0:
-        raise ValueError("Speed of sound must be positive.")
-    if speed < 0:
-        raise ValueError("Speed cannot be negative.")
-    return
