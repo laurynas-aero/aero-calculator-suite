@@ -2,7 +2,7 @@ from logic.constants import CONSTANTS
 
 def compute_temperature_from_altitude(alt, units):
     """
-    Computes ISA temperature in the troposphere and tropopause (0-20 km).
+    Computes ISA temperature (0-86 km).
 
     Parameters:
         alt (float): Altitude (m or ft depending on units)
@@ -28,13 +28,13 @@ def compute_temperature_from_altitude(alt, units):
     elif h20 <= alt < h32:
         T = _compute_temperature_from_altitude_stratosphere_lower(alt, const)
     elif h32 <= alt < h47:
-        T = _compute_temperature_from_altitude_stratosphere_upper(alt, units)
+        T = _compute_temperature_from_altitude_stratosphere_upper(alt, const)
     elif h47 <= alt < h51:
-        T = _compute_temperature_from_altitude_stratopause(alt, units)
+        T = _compute_temperature_from_altitude_stratopause(alt, const)
     elif h51 <= alt < h71:
-        T = _compute_temperature_from_altitude_mesospher_lower(alt, units)
+        T = _compute_temperature_from_altitude_mesosphere_lower(alt, const)
     elif h71 <= alt <= h86:
-        T = _compute_temperature_from_altitude_mesosphere_upper(alt, units)
+        T = _compute_temperature_from_altitude_mesosphere_upper(alt, const)
 
     return T
 
@@ -171,7 +171,7 @@ def _compute_temperature_from_altitude_tropopause(alt, const):
 
     return T
 
-def _compute_temperature_from_altitude_mesospher_lower(alt, const):
+def _compute_temperature_from_altitude_mesosphere_lower(alt, const):
     """
     Computes temperature from alititude in the mesospher (51-71 km).
 

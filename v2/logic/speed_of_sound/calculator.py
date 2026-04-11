@@ -30,6 +30,8 @@ def compute_speed_of_sound_from_altitude(alt, units):
     Returns:
         float: Speed of sound (m/s or ft/s depending on units)
         """
+    
+    # ADD INPUT CHECKING HERER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     temp = compute_temperature_from_altitude(alt, units)
     SPECIFIC_HEAT = CONSTANTS[units]["R"]
     GAMMA = CONSTANTS[units]["gamma"]
